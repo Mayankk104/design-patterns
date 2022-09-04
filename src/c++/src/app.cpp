@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    NotePad notpad;
-    notpad.implimentation();
+    // NotePad notpad;
+    // notpad.implimentation();
 
     Photoshop photoshop;
     photoshop.implimentation();
