@@ -5,8 +5,9 @@ class DataSource implements Observable {
     private _data: number[] = [];
     private observers: Observer[] = [];
 
-    public setData(data: number) {
-        this._data.push(data);
+    public set data(data: number[]) {
+        this._data = data;
+        this.notify();
     }
 
     public attach = (observer: Observer) => {
@@ -14,12 +15,12 @@ class DataSource implements Observable {
     };
 
     public detach = (observer: Observer) => {
+        console.log(this.observers.map(observer => observer.observerId));
         const observerIndex = this.observers.findIndex(localObserver => observer.observerId === localObserver.observerId);
-
+        console.log(observerIndex);
         if (observerIndex === -1) return;
-
-        this.observers = this.observers.splice(observerIndex, 1);
-        return;
+        let x = this.observers.splice(observerIndex, 1);
+        console.log(x.map(x => x.observerId));
     };
 
     public notify = () => {
@@ -27,6 +28,10 @@ class DataSource implements Observable {
             observer.update();
         }
     };
+
+    get data() {
+        return this._data;
+    }
 
 };
 
