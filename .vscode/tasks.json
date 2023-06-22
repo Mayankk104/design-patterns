@@ -9,15 +9,6 @@
                 "kind": "none"
             },
             "problemMatcher": "$tsc"
-        },
-        {
-            "label": "C++ run file",
-            "command": "cd src/c++ && sh compile.sh && cd ../../",
-            "type": "shell",
-            "group": {
-                "kind": "none"
-            },
-            "problemMatcher": ["$gcc"]
         }
     ]
 }

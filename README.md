@@ -16,3 +16,13 @@
 &nbsp; <u>C++</u>
 - `cd c++`
 - `bash complie.sh`
+
+{
+    "label": "C++ run file",
+    "command": "cd src/c++ && sh compile.sh && cd ../../",
+    "type": "shell",
+    "group": {
+    "kind": "none"
+    },
+    "problemMatcher": ["$gcc"]
+}
