@@ -34,7 +34,7 @@ void Photoshop::draw()
 
 void Photoshop::implimentation()
 {
-    int choose;
+    int choose = 1;
     while (choose == 1)
     {
         cout << "Choose: 1. Enter into Program  2. Exit" << endl;

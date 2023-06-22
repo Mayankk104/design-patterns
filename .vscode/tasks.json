@@ -1,23 +1,14 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Typescript run current file",
-            "command": "npx ts-node ${file}",
-            "type": "shell",
-            "group": {
-                "kind": "none"
-            },
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "C++ run file",
-            "command": "cd src/c++ && sh compile.sh && cd ../../",
-            "type": "shell",
-            "group": {
-                "kind": "none"
-            },
-            "problemMatcher": ["$gcc"]
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++ run file",
+      "command": "cd src/c++ && sh compile.sh && cd ../../",
+      "type": "shell",
+      "group": {
+        "kind": "none"
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
 }
