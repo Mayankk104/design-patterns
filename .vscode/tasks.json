@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "C++ run file",
-      "command": "cd src/c++ && sh compile.sh && cd ../../",
+      "command": "g++-11 -std=c++11 -o app -I ${fileDirname} ${fileDirname}/*.cpp && ./app && rm app",
       "type": "shell",
       "group": {
         "kind": "none"
