@@ -12,8 +12,13 @@ datasource.attach(spreeadsheet);
 datasource.attach(chart1);
 datasource.attach(chart0);
 
-datasource.data = [...datasource.data, 1];
+console.log('====================================');
+datasource.addValue(5);
 
+console.log('====================================');
 datasource.detach(chart0);
 
-datasource.data = [...datasource.data, 2];
+console.log('====================================');
+datasource.addValue(10);
+
+console.log('====================================');

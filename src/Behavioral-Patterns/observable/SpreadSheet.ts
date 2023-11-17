@@ -6,8 +6,8 @@ class SpreadSheet implements Observer {
 
     constructor(private datasource: DataSource) { }
 
-    update = () => {
-        console.log(`I am spreedsheet and I got updated update value: ${JSON.stringify(this.datasource.data)}`);
+    public update() {
+        console.log(`SPREEDSHEET[id:${this.observerId}]: DataSource has been updated ${JSON.stringify(this.datasource.data)}`);
         return;
     };
 

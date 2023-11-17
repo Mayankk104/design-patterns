@@ -10,17 +10,21 @@ class DataSource implements Observable {
         this.notify();
     }
 
-    public attach = (observer: Observer) => {
+    public addValue(num: number) {
+        this._data.push(num);
+        this.notify()
+    }
+
+    public attach(observer: Observer) {
+        console.log(`Obsrver[id:${observer.observerId}]: subscribed`);
         this.observers.push(observer);
     };
 
-    public detach = (observer: Observer) => {
-        console.log(this.observers.map(observer => observer.observerId));
+    public detach(observer: Observer) {
         const observerIndex = this.observers.findIndex(localObserver => observer.observerId === localObserver.observerId);
-        console.log(observerIndex);
         if (observerIndex === -1) return;
-        let x = this.observers.splice(observerIndex, 1);
-        console.log(x.map(x => x.observerId));
+        const x = this.observers.splice(observerIndex, 1);
+        console.log(`Obbserver[id:${observer.observerId}]: got unsubscribe`)
     };
 
     public notify = () => {

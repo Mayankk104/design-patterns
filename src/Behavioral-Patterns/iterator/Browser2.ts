@@ -1,8 +1,8 @@
 import { Iterator } from "./Iterator";
-import { LinkedList } from 'datastructures-js';
+import { LinkedList } from "datastructures-js";
 
 class Browser {
-    constructor(private history: BrowserHistory) { }
+    constructor(private history: BrowserHistory) {}
 
     implimentation() {
         this.history.push("a");
@@ -26,7 +26,7 @@ class BrowserHistory {
     }
 
     push(url: string) {
-        this.urls.insertLast(url)
+        this.urls.push(url);
     }
 
     static ArrayIterator = class implements Iterator<string> {
@@ -38,20 +38,17 @@ class BrowserHistory {
         }
 
         hasNext(): boolean {
-            if (this.browserHistory.urls.length > this.index)
-                return true;
-            else
-                return false;
+            if (this.browserHistory.urls.length > this.index) return true;
+            return false;
         }
         current(): string {
             return this.browserHistory.urls[this.index];
         }
 
         next(): void {
-            if (this.hasNext())
-                this.index++;
+            if (this.hasNext()) this.index++;
         }
-    }
+    };
 
     // static LinkListIterator = class implements Iterator<string>{
     //     private index: number = 0;
@@ -77,7 +74,6 @@ class BrowserHistory {
     //     }
 
     // }
-
 }
 const browserHistory: BrowserHistory = new BrowserHistory();
 const browser: Browser = new Browser(browserHistory);

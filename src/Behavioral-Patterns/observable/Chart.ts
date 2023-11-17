@@ -6,8 +6,8 @@ class Chart implements Observer {
 
     constructor(private datasource: DataSource) { }
 
-    update = () => {
-        console.log(`I am chart and I got updated update value: ${JSON.stringify(this.datasource.data)}`)
+    update() {
+        console.log(`CHART[id: ${this.observerId}]: DataSource has been updated ${JSON.stringify(this.datasource.data)}`)
     };
 }
 
