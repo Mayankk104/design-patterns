@@ -2,11 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Typescript run current file",
-            "command": "npx ts-node ${file}",
+            "label": "Run Current File with ts-node",
             "type": "shell",
-            "group": {
-                "kind": "none"
+            "command": "npx",
+            "args": ["ts-node", "${fileDirname}/${fileBasenameNoExtension}.ts"],
+            "presentation": {
+                "reveal": "always",
+                "showReuseMessage": false,
+                "echo": false,
+                "focus": true
             },
             "problemMatcher": "$tsc"
         }

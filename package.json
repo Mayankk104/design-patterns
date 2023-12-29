@@ -1,10 +1,10 @@
 {
-  "name": "typescript",
-  "version": "1.1.0",
-  "description": "",
-  "main": "app.js",
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "description": "&nbsp; <u>Behaviral Design Patterns</u>\r - Memento Design Pattern\r - State Design Pattern",
+  "main": "index.js",
   "scripts": {
-    "start": "npx nodemon src/typescript/app.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
