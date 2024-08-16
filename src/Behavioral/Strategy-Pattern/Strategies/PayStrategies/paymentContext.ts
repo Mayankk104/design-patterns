@@ -2,21 +2,18 @@ import PaymentType from "../PaymentTypes";
 import PayStrategy from "./payStrategy";
 import CashPaymentStrategy from "./cashPaymentStrategy";
 import CreditCardPayment from "./creditCardPay";
+import PaymentAdditionalInfo from "./PaymentAdditionalInfo";
 
 class PaymentContext {
-    private paymentStrategy: PayStrategy;
+    private paymentStrategy: PayStrategy | null = null;
 
-    constructor(strategy: PaymentType = PaymentType.CASH) {
-        this.setPaymentStrategy(strategy);
-    }
-
-    setPaymentStrategy(payStrategy: PaymentType) {
+    setPaymentStrategy(payStrategy: PaymentType, paymentAdditionalInfo: PaymentAdditionalInfo) {
         switch (payStrategy) {
             case "cash":
                 this.paymentStrategy = new CashPaymentStrategy();
                 break;
             case "credit_card":
-                this.paymentStrategy = new CreditCardPayment();
+                this.paymentStrategy = new CreditCardPayment(paymentAdditionalInfo?.credit_card?.cardNumber);
                 break;
             default:
                 throw new Error("invalid payment type");

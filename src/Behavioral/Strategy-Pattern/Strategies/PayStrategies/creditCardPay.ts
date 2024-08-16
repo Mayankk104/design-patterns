@@ -1,7 +1,7 @@
 import PayStrategy from "./payStrategy";
 
 class CreditCardPayment implements PayStrategy {
-    cardNumber: String;
+    constructor(private cardNumber: string) {}
 
     async pay(amount: number): Promise<boolean> {
         try {
@@ -15,7 +15,7 @@ class CreditCardPayment implements PayStrategy {
     }
 
     async cardPaymentStrategy(amount: number, cardNumber: String) {
-        console.log(`${amount} amount paid through credit card`);
+        console.log(`${amount} amount paid through credit card with card number ${cardNumber}`);
     }
 }
 
