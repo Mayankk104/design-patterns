@@ -1,3 +1,4 @@
+// ======== implementation 1 =========
 class Logger {
     private static instance: Logger;
 
@@ -10,7 +11,25 @@ class Logger {
         }
         return Logger.instance;
     }
+
+    error(message: string) {
+        console.error(message);
+    }
 }
+
+// ========= implementation 2 =========
+// class Logger {
+//     private static instance;
+
+//     constructor() {
+//         if (!Logger.instance) Logger.instance = this;
+//         return Logger.instance;
+//     }
+
+//     error(message: string) {
+//         console.error(message);
+//     }
+// }
 
 export default Logger;
 
