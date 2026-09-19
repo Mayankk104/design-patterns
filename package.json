@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "&nbsp; <u>Behaviral Design Patterns</u>\r - Memento Design Pattern\r - State Design Pattern",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },

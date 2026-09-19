@@ -2,17 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Current File with ts-node",
-            "type": "shell",
-            "command": "npx",
-            "args": ["ts-node", "${fileDirname}/${fileBasenameNoExtension}.ts"],
-            "presentation": {
-                "reveal": "always",
-                "showReuseMessage": false,
-                "echo": false,
-                "focus": true
-            },
-            "problemMatcher": "$tsc"
+            "label": "Run Current File with bun",
+            "command": "bun ${relativeFile}",
+            "problemMatcher": "$tsc",
         }
-    ]
+    ],
+    "type": "shell",
+    "presentation": {
+        "reveal": "always",
+        "showReuseMessage": false,
+        "echo": false,
+        "focus": true
+    },
+    "options": {
+        "cwd": "${workspaceFolder}"
+    }
 }
